@@ -1,0 +1,33 @@
+@primary-color: #1b86ff;
+@secondary-color: #152636;
+
+@theme-bg-light: #efefef;
+@bg-color: @primary-color;
+
+@font-color: #000;
+@font-primary:  'Montserrat', sans-serif;
+@font-secondary: 'Bebas Neue', cursive;
+
+@btn-color: @primary-color;
+
+@default-margin: 100px;
+
+@theme-radius: 0px;
+
+@sub-page-banner-height: 350px;
+
+@mobile-device-width: 767px;
+@mobile-tab-device-width: 1024px;
+@tablet-device-width: 1024px;
+
+@mobile: ~'screen and (max-width: '+@mobile-device-width+')';
+@mobileTab: ~'screen and (max-width: '+@mobile-tab-device-width+')';
+@tablet: ~'screen and (min-width: 768px) and (max-width: '+@tablet-device-width+')';
+@ipadLandscape: ~ 'screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1)';
+@destop1280: ~'screen and (min-width: 1280px) and (max-width: 1366px)';
+
+.fontawesome(@content: '') {
+    content: @content;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
