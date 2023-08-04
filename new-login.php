@@ -43,7 +43,7 @@ if($_POST)
  ?>  
 <section>
     <div class="container">
-        <form id="login1" name="form" action="<?php echo home_url(); ?>/login/" method="post">     
+        <form id="login1" name="form" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">     
             <input id="username" type="text" placeholder="Username" name="username"><br>  
             <input id="password" type="password" placeholder="Password" name="password">  
             <input id="submit" type="submit" name="submit" value="Submit">  
