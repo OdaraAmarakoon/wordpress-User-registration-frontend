@@ -47,9 +47,7 @@ if (isset($_POST['signup'])) {
       <div class="col-lg-6 ">
         <label for="validationTooltip01" class="form-label">First name</label>
         <input type="text" class="form-control" id="validationTooltip01" name="first_name" value="" required>
-        <div class="valid-tooltip">
-          Looks good!
-        </div>
+        
       </div>
 
       <div class="col-lg-6 ">
@@ -101,8 +99,6 @@ if (isset($_POST['signup'])) {
         <input type="submit" name="signup" value="Signup" class="btn btn-primary" />
       </div>
     </form>
-
-
   </div>
 </section>
 

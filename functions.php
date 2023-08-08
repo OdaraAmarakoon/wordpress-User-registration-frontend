@@ -310,3 +310,26 @@ function getSocialLinks()
 
     return $socialMedia;
 }
+
+if(isset($_POST['first_name'])) {
+    global $wp4;
+
+    $data_array = array(
+        'first_name' => $_POST['first_name'],
+        'last_name' => $_POST['last_name'],
+        'email' => $_POST['email'],
+        'username' => $_POST['username'],
+        'password' => $_POST['password']
+    );
+
+    $table_name = 'wp4_users';
+
+    $rowResult = $wp4->insetr($table_name, $data_array, $format=NULL);
+
+    if ($rowResult == 1){
+        echo '<h1>Submit Successfully</h1>';
+    }
+    else{
+        echo '<h1> Error </h1>';
+    }
+}

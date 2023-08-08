@@ -10,6 +10,8 @@
 	<?php endif; ?>
 	<link rel="canonical" href="<?php echo getCurrentUrl(); ?>">
 	<?php wp_head(); ?>
+
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.js'></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -48,3 +50,42 @@
 				</div>
 			</div>
 		</header>
+
+		<section>
+			<script type="text/javascript">
+$(document).ready(function($)
+{
+    // Signup form
+    $("#signupForm").validate(
+    {
+        rules: 
+        {           
+            name:               {   required:true },
+            user_email:         {   required:true, email: true },
+            user_password:      {   required:true },
+            user_repassword:    {   required:true, equalTo: "#user_password" },
+            user_terms:         {   required:true }         
+        },
+        submitHandler: function(form)
+        {
+            var form_data = $( "form#signupForm" ).serialize();
+            $.ajax(
+            {
+                type: "POST",
+                url: '<?php bloginfo( "template_url" ) ?>/ajax-signup.php',
+                data: form_data,
+                success: function(responseData) {
+                    if( responseData == 1 ) {
+                            location.reload();
+                    }
+                    else {
+                            jQuery(".error-msg").html(responseData);
+                    }
+                }
+            });
+            return false;
+        }
+    });
+});
+</script>
+		</section>
